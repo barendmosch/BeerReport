@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\mosch\\source\\repos\\BeerReport\\BeerAppServerSide.csproj": {}
+    "C:\\Users\\mosch\\source\\repos\\BeerReport\\BeerAppServerSide.csproj": {}
   },
   "projects": {
-    "c:\\Users\\mosch\\source\\repos\\BeerReport\\BeerAppServerSide.csproj": {
+    "C:\\Users\\mosch\\source\\repos\\BeerReport\\BeerAppServerSide.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\mosch\\source\\repos\\BeerReport\\BeerAppServerSide.csproj",
+        "projectUniqueName": "C:\\Users\\mosch\\source\\repos\\BeerReport\\BeerAppServerSide.csproj",
         "projectName": "BeerAppServerSide",
-        "projectPath": "c:\\Users\\mosch\\source\\repos\\BeerReport\\BeerAppServerSide.csproj",
+        "projectPath": "C:\\Users\\mosch\\source\\repos\\BeerReport\\BeerAppServerSide.csproj",
         "packagesPath": "C:\\Users\\mosch\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\mosch\\source\\repos\\BeerReport\\obj\\",
+        "outputPath": "C:\\Users\\mosch\\source\\repos\\BeerReport\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
