@@ -11,8 +11,7 @@ using Newtonsoft.Json;
 namespace Company.Function {
     public static class SomeFunction {
         [FunctionName("SomeFunction")]
-        public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req, ILogger log) {
+        public static async Task<IActionResult> Run( [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req, ILogger log) {
             log.LogInformation("C# HTTP trigger function processed a request.");
 
             string name = req.Query["name"];
