@@ -1,0 +1,20 @@
+Weather API:
+
+    https://developer.accuweather.com/
+
+API KEY: 1yh0Gg86WIPFrrl34VFmJ1hrV9B4yC3B
+
+API call to get all region data: 
+    http://dataservice.accuweather.com/locations/v1/topcities/50?apikey=1yh0Gg86WIPFrrl34VFmJ1hrV9B4yC3B&language=en-us&details=false
+
+API call to get weather data from Amsterdam
+    http://dataservice.accuweather.com/forecasts/v1/daily/1day/249758?apikey=1yh0Gg86WIPFrrl34VFmJ1hrV9B4yC3B&language=en-us&details=false&metric=false
+
+Azure Map API
+Primary Key:
+    QfyAdGi2BBFxOzcPeBC20NyHfDdeUesLn2gvx1xWTzY
+
+USe Azure Maps or Mapbox or something else
+    https://docs.mapbox.com/api/
+    
+Commit please
