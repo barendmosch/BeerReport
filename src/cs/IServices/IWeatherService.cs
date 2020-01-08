@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-namespace BeerApplication{
+namespace BeerAppServerSide {
     public interface IWeatherService {
         Task<string> GetWeather(int countryCode);
     }

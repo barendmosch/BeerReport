@@ -11,7 +11,7 @@ using System.Net;
 using System;
 using System.Text;
 
-namespace BeerApplication {
+namespace BeerAppServerSide {
     public class WeatherController {
 
         private IWeatherService weatherService;

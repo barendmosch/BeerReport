@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using System.Net.Http;
 
-namespace BeerApplication{
+namespace BeerAppServerSide {
 
      internal class WeatherService : IWeatherService{
 
