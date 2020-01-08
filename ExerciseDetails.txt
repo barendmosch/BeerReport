@@ -16,5 +16,3 @@ Primary Key:
 
 USe Azure Maps or Mapbox or something else
     https://docs.mapbox.com/api/
-    
-Commit please

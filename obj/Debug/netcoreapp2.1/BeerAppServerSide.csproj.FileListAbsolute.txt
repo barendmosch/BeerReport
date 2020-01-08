@@ -1,4 +1,3 @@
-C:\Users\mosch\source\repos\BeerReport\bin\output\host.json
 C:\Users\mosch\source\repos\BeerReport\bin\output\local.settings.json
 C:\Users\mosch\source\repos\BeerReport\bin\output\BeerAppServerSide.deps.json
 C:\Users\mosch\source\repos\BeerReport\bin\output\bin\BeerAppServerSide.dll
