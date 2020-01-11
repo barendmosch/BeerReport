@@ -36,9 +36,9 @@ namespace BeerAppServerSide {
                     log.LogError(e.ToString());
                     return new HttpResponseMessage(HttpStatusCode.BadRequest);
                 }
-            }else{
-                throw new NotImplementedException();
             }
+
+            throw new NotImplementedException();
         }
     }
 }
