@@ -10,6 +10,8 @@ using Newtonsoft.Json;
 using System.Net;
 using System;
 using System.Text;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace BeerAppServerSide {
 
