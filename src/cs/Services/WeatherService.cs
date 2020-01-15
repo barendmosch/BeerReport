@@ -1,5 +1,8 @@
 using System.Threading.Tasks;
 using System.Net.Http;
+using Microsoft.Azure.storage;
+using Microsoft.Azure.storage.queue;
+using Microsoft.Azure.storage.blob;
 using System.IO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
@@ -33,7 +36,7 @@ namespace BeerAppServerSide {
             string json = await response.Content.ReadAsStringAsync();
             dynamic data = JObject.Parse(json);
 
-            /* Data to put into the blob for later */
+            /* Data to put into the queue for later */
             string weatherType = data.DailyForecasts[0].Day.IconPhrase;
             int minFahrenheit = data.DailyForecasts[0].Temperature.Minimum.Value;
             int maxFahrenheit = data.DailyForecasts[0].Temperature.Maximum.Value; 
