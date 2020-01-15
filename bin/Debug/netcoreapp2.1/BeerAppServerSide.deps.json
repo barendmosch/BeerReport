@@ -11,6 +11,7 @@
           "Microsoft.Azure.Functions.Extensions": "1.0.0",
           "Microsoft.Azure.Storage.Blob": "11.1.1",
           "Microsoft.Azure.Storage.Common": "11.1.1",
+          "Microsoft.Azure.Storage.Queue": "11.1.1",
           "Microsoft.Azure.WebJobs.Extensions.Storage": "3.0.4",
           "Microsoft.NET.Sdk.Functions": "1.0.29",
           "Newtonsoft.Json": "12.0.3",
@@ -324,6 +325,17 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.Azure.Storage.Common.dll": {
+            "assemblyVersion": "11.1.1.0",
+            "fileVersion": "11.1.1.0"
+          }
+        }
+      },
+      "Microsoft.Azure.Storage.Queue/11.1.1": {
+        "dependencies": {
+          "Microsoft.Azure.Storage.Common": "11.1.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Azure.Storage.Queue.dll": {
             "assemblyVersion": "11.1.1.0",
             "fileVersion": "11.1.1.0"
           }
@@ -1483,6 +1495,13 @@
       "sha512": "sha512-qIveCnEP+upXcK7uJL0z2xhErN6vkmYlxLPG5tdODWqOCXVXRNit/esAYP+6PJkArVLQPJpvQ1v3f+tGFWTfuA==",
       "path": "microsoft.azure.storage.common/11.1.1",
       "hashPath": "microsoft.azure.storage.common.11.1.1.nupkg.sha512"
+    },
+    "Microsoft.Azure.Storage.Queue/11.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3WEVTEDupsHtIoy4TK88/wS4qAOo28nsPDfgS6KS4fJ2GhSpQPIgtgsjDJluEbaMHdAvv6pw2OcqwhNxNBG/DQ==",
+      "path": "microsoft.azure.storage.queue/11.1.1",
+      "hashPath": "microsoft.azure.storage.queue.11.1.1.nupkg.sha512"
     },
     "Microsoft.Azure.WebJobs/3.0.5": {
       "type": "package",
