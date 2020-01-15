@@ -6611,24 +6611,30 @@
     ]
   },
   "packageFolders": {
-    "/Users/barendmosch/.nuget/packages/": {}
+    "C:\\Users\\mosch\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/barendmosch/source/repos/BeerReport/BeerAppServerSide.csproj",
+      "projectUniqueName": "C:\\Users\\mosch\\source\\repos\\BeerReport\\BeerAppServerSide.csproj",
       "projectName": "BeerAppServerSide",
-      "projectPath": "/Users/barendmosch/source/repos/BeerReport/BeerAppServerSide.csproj",
-      "packagesPath": "/Users/barendmosch/.nuget/packages/",
-      "outputPath": "/Users/barendmosch/source/repos/BeerReport/obj/",
+      "projectPath": "C:\\Users\\mosch\\source\\repos\\BeerReport\\BeerAppServerSide.csproj",
+      "packagesPath": "C:\\Users\\mosch\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mosch\\source\\repos\\BeerReport\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "/Users/barendmosch/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\mosch\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -6694,7 +6700,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.100/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
       }
     }
   },
