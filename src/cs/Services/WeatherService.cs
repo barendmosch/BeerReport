@@ -17,6 +17,8 @@ namespace BeerAppServerSide {
 
      internal class WeatherService : IWeatherService{
 
+        public static readonly double ConstFahrCelcConversion = 17.778;
+
         // Weather code Amsterdam: 249758
         public WeatherService(){}
         public async Task<string> GetWeather(int countryCode){
@@ -27,18 +29,18 @@ namespace BeerAppServerSide {
 
             HttpResponseMessage response = await newClient.SendAsync(newRequest);
             
+            /* Read the responseBody and paste to a JObject */
             string json = await response.Content.ReadAsStringAsync();
-            
             dynamic data = JObject.Parse(json);
 
-            string weatherType = data.DailyForecasts.Day.IconPhrase;
-            int minFahrenheit = data.DailyForecasts.Temperature.Minimum.Value;
-            int maxFahrenheit = data.DailyForecasts.Temperature.Maximum.Value; 
+            /* Data to put into the blob for later */
+            string weatherType = data.DailyForecasts[0].Day.IconPhrase;
+            int minFahrenheit = data.DailyForecasts[0].Temperature.Minimum.Value;
+            int maxFahrenheit = data.DailyForecasts[0].Temperature.Maximum.Value; 
+            double avgCelciusToday = ((minFahrenheit - ConstFahrCelcConversion) * (maxFahrenheit - ConstFahrCelcConversion)) / 2;
 
             Console.WriteLine(weatherType);
-            Console.WriteLine(minFahrenheit);
-            Console.WriteLine(maxFahrenheit); 
-
+            Console.WriteLine(avgCelciusToday);
 
             return json;
         }
