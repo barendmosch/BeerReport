@@ -1,8 +1,5 @@
 using System.Threading.Tasks;
 using System.Net.Http;
-using Microsoft.Azure.storage;
-using Microsoft.Azure.storage.queue;
-using Microsoft.Azure.storage.blob;
 using System.IO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
@@ -13,7 +10,6 @@ using Newtonsoft.Json;
 using System.Net;
 using System;
 using System.Text;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace BeerAppServerSide {
@@ -44,6 +40,8 @@ namespace BeerAppServerSide {
 
             Console.WriteLine(weatherType);
             Console.WriteLine(avgCelciusToday);
+
+            StorageAccount storageAccount = null;
 
             return json;
         }
