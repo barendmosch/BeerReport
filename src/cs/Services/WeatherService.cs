@@ -42,7 +42,7 @@ namespace BeerAppServerSide {
             Console.WriteLine(weatherType);
             Console.WriteLine(avgCelciusToday);
 
-            StorageAccount storageAccount = null;
+            CloudStorageAccount cloudStorageAccount = null;
 
             return json;
         }
