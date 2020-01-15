@@ -23,8 +23,6 @@ namespace BeerAppServerSide {
         public async Task<HttpResponseMessage> Run( [HttpTrigger(AuthorizationLevel.Anonymous, 
             "get", Route = "weather/today/{countryCode}")] HttpRequestMessage req, ILogger log, int countryCode) {
 
-            weatherService = new WeatherService();
-            
             if (req.Method == HttpMethod.Get){
                 try{
                     var json = await weatherService.GetWeather(countryCode);
