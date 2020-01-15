@@ -9,9 +9,12 @@
       "BeerAppServerSide/1.0.0": {
         "dependencies": {
           "Microsoft.Azure.Functions.Extensions": "1.0.0",
+          "Microsoft.Azure.Storage.Blob": "11.1.1",
+          "Microsoft.Azure.Storage.Common": "11.1.1",
           "Microsoft.Azure.WebJobs.Extensions.Storage": "3.0.4",
           "Microsoft.NET.Sdk.Functions": "1.0.29",
-          "Newtonsoft.Json": "12.0.3"
+          "Newtonsoft.Json": "12.0.3",
+          "WindowsAzure.Storage": "9.3.3"
         },
         "runtime": {
           "BeerAppServerSide.dll": {}
@@ -291,6 +294,41 @@
           }
         }
       },
+      "Microsoft.Azure.KeyVault.Core/2.0.4": {
+        "dependencies": {
+          "System.Runtime": "4.3.0",
+          "System.Threading.Tasks": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.5/Microsoft.Azure.KeyVault.Core.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.4.0"
+          }
+        }
+      },
+      "Microsoft.Azure.Storage.Blob/11.1.1": {
+        "dependencies": {
+          "Microsoft.Azure.Storage.Common": "11.1.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Azure.Storage.Blob.dll": {
+            "assemblyVersion": "11.1.1.0",
+            "fileVersion": "11.1.1.0"
+          }
+        }
+      },
+      "Microsoft.Azure.Storage.Common/11.1.1": {
+        "dependencies": {
+          "Microsoft.Azure.KeyVault.Core": "2.0.4",
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Azure.Storage.Common.dll": {
+            "assemblyVersion": "11.1.1.0",
+            "fileVersion": "11.1.1.0"
+          }
+        }
+      },
       "Microsoft.Azure.WebJobs/3.0.5": {
         "dependencies": {
           "Microsoft.Azure.WebJobs.Core": "3.0.5",
@@ -356,7 +394,7 @@
       "Microsoft.Azure.WebJobs.Extensions.Storage/3.0.4": {
         "dependencies": {
           "Microsoft.Azure.WebJobs": "3.0.5",
-          "WindowsAzure.Storage": "9.3.1"
+          "WindowsAzure.Storage": "9.3.3"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.Azure.WebJobs.Extensions.Storage.dll": {
@@ -368,7 +406,7 @@
       "Microsoft.Azure.WebJobs.Host.Storage/3.0.0": {
         "dependencies": {
           "Microsoft.Azure.WebJobs": "3.0.5",
-          "WindowsAzure.Storage": "9.3.1"
+          "WindowsAzure.Storage": "9.3.3"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.Azure.WebJobs.Host.Storage.dll": {
@@ -1259,14 +1297,14 @@
           "System.Xml.XmlDocument": "4.0.1"
         }
       },
-      "WindowsAzure.Storage/9.3.1": {
+      "WindowsAzure.Storage/9.3.3": {
         "dependencies": {
           "Newtonsoft.Json": "12.0.3"
         },
         "runtime": {
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {
-            "assemblyVersion": "9.3.1.0",
-            "fileVersion": "9.3.1.0"
+            "assemblyVersion": "9.3.2.0",
+            "fileVersion": "9.3.2.0"
           }
         }
       }
@@ -1424,6 +1462,27 @@
       "sha512": "sha512-rIiuBZyN1lhDkF3oXzaKjyvcDjo9SFtND4+ny6Pyl+qVUHERGk2VmG2BRwep/V6IFE0HseOH/dJhx7lrjbE+BA==",
       "path": "microsoft.azure.functions.extensions/1.0.0",
       "hashPath": "microsoft.azure.functions.extensions.1.0.0.nupkg.sha512"
+    },
+    "Microsoft.Azure.KeyVault.Core/2.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BSdPbmZ1BvptdfgECniezEwfQLAyT11MsOm4btXdswjIm8BkLK9eX//yO8ExlafErJg1tAKpCxfNyLTHSlXJvA==",
+      "path": "microsoft.azure.keyvault.core/2.0.4",
+      "hashPath": "microsoft.azure.keyvault.core.2.0.4.nupkg.sha512"
+    },
+    "Microsoft.Azure.Storage.Blob/11.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-G+iFLs56IpXZswUDqPHD96CeiSyhRDFs9MeKmQAbfi0QG95Wu/xFJXxY+PLJf4vOxPmVo2KNqOKFkMNrijO5tw==",
+      "path": "microsoft.azure.storage.blob/11.1.1",
+      "hashPath": "microsoft.azure.storage.blob.11.1.1.nupkg.sha512"
+    },
+    "Microsoft.Azure.Storage.Common/11.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qIveCnEP+upXcK7uJL0z2xhErN6vkmYlxLPG5tdODWqOCXVXRNit/esAYP+6PJkArVLQPJpvQ1v3f+tGFWTfuA==",
+      "path": "microsoft.azure.storage.common/11.1.1",
+      "hashPath": "microsoft.azure.storage.common.11.1.1.nupkg.sha512"
     },
     "Microsoft.Azure.WebJobs/3.0.5": {
       "type": "package",
@@ -2097,12 +2156,12 @@
       "path": "system.xml.xmlserializer/4.0.11",
       "hashPath": "system.xml.xmlserializer.4.0.11.nupkg.sha512"
     },
-    "WindowsAzure.Storage/9.3.1": {
+    "WindowsAzure.Storage/9.3.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-NooNF4glP6BO7U4dno/xSfiEVVIv6OFcFfisX24Us2CZa9NQR3TSVEj9eVUlM5rLat5H9CHxk6M/mNSIaq7Vrw==",
-      "path": "windowsazure.storage/9.3.1",
-      "hashPath": "windowsazure.storage.9.3.1.nupkg.sha512"
+      "sha512": "sha512-VUV8j6dzkU/7vDgk5k+ob5g7nnch2fNByr0p9aOxMGFGk+tAnTehrZ4qnClF04CVozP1GNN2zrnbsxCmr+iZBg==",
+      "path": "windowsazure.storage/9.3.3",
+      "hashPath": "windowsazure.storage.9.3.3.nupkg.sha512"
     }
   }
 }

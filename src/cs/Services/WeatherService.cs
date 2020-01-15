@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using System.IO;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Azure.Storage;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;

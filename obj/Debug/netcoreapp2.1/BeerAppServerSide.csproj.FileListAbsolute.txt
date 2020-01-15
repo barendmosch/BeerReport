@@ -201,3 +201,6 @@ C:\Users\mosch\source\repos\BeerReport\obj\Debug\netcoreapp2.1\BeerAppServerSide
 C:\Users\mosch\source\repos\BeerReport\obj\Debug\netcoreapp2.1\BeerAppServerSide.csproj.CopyComplete
 C:\Users\mosch\source\repos\BeerReport\obj\Debug\netcoreapp2.1\BeerAppServerSide.dll
 C:\Users\mosch\source\repos\BeerReport\obj\Debug\netcoreapp2.1\BeerAppServerSide.pdb
+C:\Users\mosch\source\repos\BeerReport\bin\Debug\netcoreapp2.1\bin\Microsoft.Azure.KeyVault.Core.dll
+C:\Users\mosch\source\repos\BeerReport\bin\Debug\netcoreapp2.1\bin\Microsoft.Azure.Storage.Blob.dll
+C:\Users\mosch\source\repos\BeerReport\bin\Debug\netcoreapp2.1\bin\Microsoft.Azure.Storage.Common.dll
