@@ -41,6 +41,10 @@
       "frameworks": {
         "netcoreapp2.1": {
           "dependencies": {
+            "Extended.Wpf.Toolkit": {
+              "target": "Package",
+              "version": "[3.7.0, )"
+            },
             "Microsoft.Azure.Functions.Extensions": {
               "target": "Package",
               "version": "[1.0.0, )"
@@ -74,6 +78,18 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.3, )"
+            },
+            "SharpDX.Direct2D1": {
+              "target": "Package",
+              "version": "[4.2.0, )"
+            },
+            "SixLabors.Fonts": {
+              "target": "Package",
+              "version": "[1.0.0-beta0009, )"
+            },
+            "SixLabors.ImageSharp": {
+              "target": "Package",
+              "version": "[1.0.0-beta0007, )"
             }
           },
           "imports": [

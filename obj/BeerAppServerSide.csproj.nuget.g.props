@@ -19,5 +19,6 @@
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_Azure_WebJobs_Script_ExtensionsMetadataGenerator Condition=" '$(PkgMicrosoft_Azure_WebJobs_Script_ExtensionsMetadataGenerator)' == '' ">C:\Users\mosch\.nuget\packages\microsoft.azure.webjobs.script.extensionsmetadatagenerator\1.1.2</PkgMicrosoft_Azure_WebJobs_Script_ExtensionsMetadataGenerator>
     <PkgMicrosoft_NET_Sdk_Functions Condition=" '$(PkgMicrosoft_NET_Sdk_Functions)' == '' ">C:\Users\mosch\.nuget\packages\microsoft.net.sdk.functions\1.0.29</PkgMicrosoft_NET_Sdk_Functions>
+    <PkgExtended_Wpf_Toolkit Condition=" '$(PkgExtended_Wpf_Toolkit)' == '' ">C:\Users\mosch\.nuget\packages\extended.wpf.toolkit\3.7.0</PkgExtended_Wpf_Toolkit>
   </PropertyGroup>
 </Project>

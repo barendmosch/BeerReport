@@ -7,7 +7,12 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
-using System.Drawing;
+using SixLabors.Fonts;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.PixelFormats;
+using SixLabors.ImageSharp.Processing;
+using SixLabors.Primitives;
+using System.IO;
 
 namespace BeerAppServerSide {
     public static class BeerQueue {
@@ -30,10 +35,11 @@ namespace BeerAppServerSide {
 
             /* Read the responseBody and paste to a JObject */
             //var json = response.Content.ReadAsStringAsync();
-            var result = await response.Content.ReadAsStreamAsync();
-            Image image = Image.FromStream(result);
-            Bitmap bitmap = (Bitmap)image;
-            Console.WriteLine(bitmap.GetType());
+            
+            Stream result = await response.Content.ReadAsStreamAsync();
+            MapImage mapImage = new MapImage();
+            mapImage.DrawImage(result);
+
         }
     }
 }
