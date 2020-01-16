@@ -7,15 +7,7 @@ using Newtonsoft.Json;
 
 namespace BeerAppServerSide {
 
-    /* This is custom exceptionHandler which contains:
-
-    - 400 BadRequest
-    - 401 Unauthorized (not implemented)
-    - 404 NotFound
-    - 500 Internal Service Error
-    - 503 Service Not Available
-    
-    Throwing one of the exceptions also stores the message in the log*/
+    /* Custom exceptionHandler to catch exception and log a hardcoded log message to the user */
     public class ExceptionHandler : IExceptionHandler {
 
         private readonly ILogger log;
@@ -23,22 +15,23 @@ namespace BeerAppServerSide {
             log = loggerFactory.CreateLogger(LogCategories.CreateFunctionUserCategory("ExceptionHandler"));
         }
         
-        /*Undocumented filter parameter*/
-        private readonly string badRequestMessage = $"{HttpStatusCode.BadRequest}: Bad request on the API services";
+        private readonly string badRequestMessage = $"Bad request occured calling the external API services";
 
-        /*Internal Service Error, most commonly thrown by missing required data in JSON*/
-        private readonly string jsonRequired = $"RequestBody is missing required data";
-
-        /*Some Token error message*/
         private readonly string cloudMessage = $"Could not open or find the requested Cloud services";
+
+        private readonly string blobRequiredMessage = $"No blob to download in the container";
+
+        private readonly string uploadFailedMessage = "Something went wrong with uploading the image to the blob container";
 
         public HttpResponseMessage ReturnException(Exception e) {
             if (e is BadRequestException) {
                 return BadRequest();
-            } else if (e is JsonSerializationException) {
-                return JsonRequired();
+            } else if (e is BlobDoesNotExistException) {
+                return BlobRequired();
             } else if (e is ServiceUnavailableException) {
                 return CloudServicesNotWorking();
+            } else if(e is UploadException) {
+                return UploadNotWorking();
             } else {
                 /* Everything else is seen as an generic exception */
                 throw new Exception();
@@ -48,14 +41,18 @@ namespace BeerAppServerSide {
             log.LogError(badRequestMessage);
             return new HttpResponseMessage(HttpStatusCode.BadRequest);
         }
-
-        public HttpResponseMessage JsonRequired() {
-            log.LogError(jsonRequired);
-            return new HttpResponseMessage(HttpStatusCode.InternalServerError);
-        }
+    
         public HttpResponseMessage CloudServicesNotWorking() {
             log.LogError(cloudMessage);
             return new HttpResponseMessage(HttpStatusCode.NotFound);
+        }
+        public HttpResponseMessage BlobRequired() {
+            log.LogError(blobRequiredMessage);
+            return new HttpResponseMessage(HttpStatusCode.NotFound);
+        }
+        public HttpResponseMessage UploadNotWorking() {
+            log.LogError(uploadFailedMessage);
+            return new HttpResponseMessage(HttpStatusCode.BadRequest);
         }
     }
 }

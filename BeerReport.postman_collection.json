@@ -1,0 +1,74 @@
+{
+	"info": {
+		"_postman_id": "7c541634-2bd0-4887-a96f-e259c753610c",
+		"name": "BeerReport",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create BeerReport",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				},
+				"description": "Creates an image of Amsterdam with advise to drink beer there today or not, given by the weather forecast of this day."
+			},
+			"response": [
+				{
+					"name": "Create BeerReport",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7071/api/weather/today",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"weather",
+								"today"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 16 Jan 2020 20:49:30 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Get Map and Beer drinking Advise",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				},
+				"description": "Shows the map of Amsterdam with advise to drink beer there or not, given by the weather forecast if this day."
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

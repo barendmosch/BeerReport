@@ -16,15 +16,5 @@ namespace BeerAppServerSide {
         public double Longitude { get; set; } = 4.899431;
 
         public double Latitude { get; set; } = 52.379189;
-
-
-        //public override string ToString() {
-        //    return $"WeatherInformation: (WeatherDate={WeatherDate}; AverageCelcius={AverageCelcius})";
-        //}
-
-        public void GetJsonObject(string information) {
-            JObject.Parse(information);
-        }
-
     }
 }

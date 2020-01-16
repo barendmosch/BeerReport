@@ -1,4 +1,13 @@
 # Server Side Programming
+
+## API Description
+This API is made for people who are curious if they want to drink beer in Amsterdam today.
+The user must use a POST call first to get the weather information of Amsterdam today and uploads a Image of the map of Amsterdam to a Blob Storage in Azure.
+Through the GET call the user downloads the map of Amsterdams through a connection to the Blob Storage. The output is the map and some advise if Amsterdam is a nice city to drink beer there.
+
+I made the API static (It can only get information of Amsterdam)
+This is my bad, I could have made the API dynamically to ask the user for a country and based on the input, a map would be generated with the necessary information.
+
 ## Software Requirements
 - Postman / Insomnia / Fiddler
 - Visual Studio 2017 >= 15.7 
@@ -37,4 +46,3 @@
 Wanneer alle must haves op de juiste manier zijn geïmplementeerd leidt dit tot het cijfer 6.0. Met de could haves en would haves kunnen extra punten verdiend worden. 
 
 De opdracht dient te worden ingeleverd in de vorm van een git repository, bij voorkeur een die publiek toegankelijk is en kan worden gecloned. Indien dit geen optie is, resteert het opsturen van een zipfile. Het inleveren geschiedt door middel van het sturen van een email aan T.Bleijendaal@wearetriple.com met een cc aan erwin.devries@inholland.nl.De deadline voor de 1e kans is 16 oktober om 23:59. De deadline voor de herkansing ligt in periode 2 en zal via moodle nader bekend worden gemaakt.
-

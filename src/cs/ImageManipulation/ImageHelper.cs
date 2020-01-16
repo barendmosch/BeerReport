@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.IO;
 using SixLabors.Fonts;
 
@@ -10,10 +9,12 @@ using SixLabors.ImageSharp.Processing;
 using SixLabors.Primitives;
 
 // ImageHelper class from Triple at: https://github.com/wearetriple/InHolland-CCD/blob/master/DemoQ/ImageHelper.cs
+// Full credits to Thomas Bleijendaal: https://github.com/ThomasBleijendaal
+
+/* ImageHelper helps adding text to an existing image */
 namespace BeerAppServerSide {
     public static class ImageHelper {
         public static MemoryStream AddTextToImage(Stream imageStream, params (string text, (float x, float y) position) [] texts) {
-            Console.WriteLine("texts: " + texts);
             imageStream.Position = 0;
 
             MemoryStream memoryStream = new MemoryStream();
