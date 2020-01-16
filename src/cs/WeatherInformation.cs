@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -14,8 +15,17 @@ namespace BeerAppServerSide {
 
         public double AverageCelcius { get; set; }
 
-        public override string ToString() {
-            return $"WeatherInformation: (WeatherDate={WeatherDate}; AverageCelcius={AverageCelcius})";
+        public double Longitude { get; set; } = 4.899431;
+
+        public double Latitude { get; set; } = 52.379189;
+
+
+        //public override string ToString() {
+        //    return $"WeatherInformation: (WeatherDate={WeatherDate}; AverageCelcius={AverageCelcius})";
+        //}
+
+        public void GetJsonObject(string information) {
+            JObject.Parse(information);
         }
 
     }

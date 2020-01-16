@@ -2000,7 +2000,7 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "WindowsAzure.Storage/9.3.3": {
+      "WindowsAzure.Storage/9.3.1": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1",
@@ -6572,10 +6572,10 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
-    "WindowsAzure.Storage/9.3.3": {
-      "sha512": "VUV8j6dzkU/7vDgk5k+ob5g7nnch2fNByr0p9aOxMGFGk+tAnTehrZ4qnClF04CVozP1GNN2zrnbsxCmr+iZBg==",
+    "WindowsAzure.Storage/9.3.1": {
+      "sha512": "NooNF4glP6BO7U4dno/xSfiEVVIv6OFcFfisX24Us2CZa9NQR3TSVEj9eVUlM5rLat5H9CHxk6M/mNSIaq7Vrw==",
       "type": "package",
-      "path": "windowsazure.storage/9.3.3",
+      "path": "windowsazure.storage/9.3.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -6592,7 +6592,7 @@
         "lib/wp8/Microsoft.WindowsAzure.Storage.pdb",
         "lib/wpa/Microsoft.WindowsAzure.Storage.dll",
         "lib/wpa/Microsoft.WindowsAzure.Storage.pdb",
-        "windowsazure.storage.9.3.3.nupkg.sha512",
+        "windowsazure.storage.9.3.1.nupkg.sha512",
         "windowsazure.storage.nuspec"
       ]
     }
@@ -6606,8 +6606,7 @@
       "Microsoft.Azure.WebJobs.Extensions.Storage >= 3.0.4",
       "Microsoft.NET.Sdk.Functions >= 1.0.29",
       "Microsoft.NETCore.App >= 2.1.0",
-      "Newtonsoft.Json >= 12.0.3",
-      "WindowsAzure.Storage >= 9.3.3"
+      "Newtonsoft.Json >= 12.0.3"
     ]
   },
   "packageFolders": {
@@ -6684,10 +6683,6 @@
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[12.0.3, )"
-          },
-          "WindowsAzure.Storage": {
-            "target": "Package",
-            "version": "[9.3.3, )"
           }
         },
         "imports": [
