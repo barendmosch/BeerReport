@@ -12,6 +12,10 @@ API URL: https://beerappserverside.azurewebsites.net
 GET: https://beerappserverside.azurewebsites.net/api/weather/today
 POST: https://beerappserverside.azurewebsites.net/api/weather/today
 
+Or you can run in locally by running the 
+ - func start --build 
+command in the root directory of this project
+
 
 ## Software Requirements
 - Postman / Insomnia / Fiddler
