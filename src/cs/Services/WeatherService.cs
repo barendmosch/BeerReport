@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.IO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Storage;
+using Microsoft.Azure.Storage.Queue;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
@@ -34,15 +35,22 @@ namespace BeerAppServerSide {
             dynamic data = JObject.Parse(json);
 
             /* Data to put into the queue for later */
-            string weatherType = data.DailyForecasts[0].Day.IconPhrase;
+            DateTime weatherDate = data.DailyForecasts[0].Date;
             int minFahrenheit = data.DailyForecasts[0].Temperature.Minimum.Value;
             int maxFahrenheit = data.DailyForecasts[0].Temperature.Maximum.Value; 
             double avgCelciusToday = ((minFahrenheit - ConstFahrCelcConversion) * (maxFahrenheit - ConstFahrCelcConversion)) / 2;
 
-            Console.WriteLine(weatherType);
+            Console.WriteLine(weatherDate);
             Console.WriteLine(avgCelciusToday);
 
+            WeatherInformation weatherInformation = new WeatherInformation(weatherDate, avgCelciusToday);
+
             CloudStorageAccount cloudStorageAccount = CloudStorageAccount.Parse(EnvironmentStrings.StorageAccount);
+            CloudQueueClient cloudQueueClient = cloudStorageAccount.CreateCloudQueueClient();
+            CloudQueue cloudQueue = cloudQueueClient.GetQueueReference("BeerQueue");
+
+            cloudQueue.CreateIfNotExists();
+            cloudQueue.AddMessage(new CloudQueueMessage(weatherInformation.ToString()));
 
             return json;
         }
