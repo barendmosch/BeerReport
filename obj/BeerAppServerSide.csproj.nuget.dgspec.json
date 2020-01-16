@@ -45,6 +45,18 @@
               "target": "Package",
               "version": "[3.7.0, )"
             },
+            "Magick.NET-Q16-AnyCPU": {
+              "target": "Package",
+              "version": "[7.15.0, )"
+            },
+            "Microsoft.AspNet.Mvc": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
             "Microsoft.Azure.Functions.Extensions": {
               "target": "Package",
               "version": "[1.0.0, )"
@@ -75,13 +87,17 @@
               "version": "[2.1.0, )",
               "autoReferenced": true
             },
+            "Microsoft.WindowsAzure.Management.MediaServices": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.3, )"
             },
-            "SharpDX.Direct2D1": {
+            "SixLabors.Core": {
               "target": "Package",
-              "version": "[4.2.0, )"
+              "version": "[1.0.0-beta0008, )"
             },
             "SixLabors.Fonts": {
               "target": "Package",
@@ -90,6 +106,14 @@
             "SixLabors.ImageSharp": {
               "target": "Package",
               "version": "[1.0.0-beta0007, )"
+            },
+            "SixLabors.ImageSharp.Drawing": {
+              "target": "Package",
+              "version": "[1.0.0-beta0007, )"
+            },
+            "SixLabors.Shapes.Text": {
+              "target": "Package",
+              "version": "[1.0.0-beta0009, )"
             }
           },
           "imports": [

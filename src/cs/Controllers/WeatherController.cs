@@ -10,32 +10,56 @@ using System.Net.Http;
 using System.Net;
 using System;
 using System.Text;
+using System.Net.Http.Headers;
 
 namespace BeerAppServerSide {
     public class WeatherController {
 
-        private IWeatherService weatherService;
-        public WeatherController(IWeatherService weatherService){
+        private IWeatherService weatherService; 
+        private IExceptionHandler exceptionHandler;
+
+        public WeatherController(IWeatherService weatherService, IExceptionHandler exceptionHandler) {
             this.weatherService = weatherService;
+            this.exceptionHandler = exceptionHandler;
         }
+
+        /* Make a generic exceptionHandler */
 
         [FunctionName("WeatherInformation")]
         public async Task<HttpResponseMessage> Run( [HttpTrigger(AuthorizationLevel.Anonymous, 
-            "get", Route = "weather/today/{countryCode}")] HttpRequestMessage req, ILogger log, int countryCode) {
+            "get", "post", Route = "weather/today")] HttpRequestMessage req, ILogger log) {
 
             if (req.Method == HttpMethod.Get){
-                try{
-                    var json = await weatherService.GetWeather(countryCode);
+                try {
+                    MemoryStream dataStream = await weatherService.GetBeerReport();
 
-                    return new HttpResponseMessage(HttpStatusCode.OK){
-                        Content = new StringContent(json, Encoding.UTF8, "application/json")
-                    }; 
-                }catch(Exception e){
+                    HttpResponseMessage httpResponseMessage = new HttpResponseMessage {
+                        Content = new StreamContent(dataStream)
+                    };
+                    httpResponseMessage.Content.Headers.ContentType = new MediaTypeHeaderValue("image/png");
+
+                    return httpResponseMessage;
+                } catch (Exception e) {
                     log.LogError(e.ToString());
-                    return new HttpResponseMessage(HttpStatusCode.BadRequest);
+                    return exceptionHandler.ReturnException(e);
+                }
+            } else if (req.Method == HttpMethod.Post) {
+                try {
+
+                    //string fileName = "";
+                    //
+                    //using (StringReader reader = new StringReader(await req.Content.ReadAsStringAsync())) {
+                    //    fileName = JsonConvert.DeserializeObject<string>(reader.ReadToEnd());   
+                    //}
+
+                    await weatherService.CreateBeerReport();
+
+                    return new HttpResponseMessage(HttpStatusCode.Created);
+                } catch (Exception e) {
+                    log.LogError(e.ToString());
+                    return exceptionHandler.ReturnException(e);
                 }
             }
-
             throw new NotImplementedException();
         }
     }

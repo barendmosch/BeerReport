@@ -1,21 +1,12 @@
 using System;
 using System.Net.Http;
-using System.Threading.Tasks;
 using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.Collections.Generic;
-using SixLabors.Fonts;
-using SixLabors.ImageSharp;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing;
-using SixLabors.Primitives;
 using System.IO;
 
 namespace BeerAppServerSide {
-    public static class BeerQueue {
+    public class BeerQueue {
 
         [FunctionName("beerqueue")]
         public static async void Run([QueueTrigger("beerqueue", Connection = "AzureWebJobsStorage")]string weatherQueue, ILogger log) {
@@ -27,6 +18,7 @@ namespace BeerAppServerSide {
 
             /* Parse JSON to Weather object */
             WeatherInformation weatherInformation = JsonConvert.DeserializeObject<WeatherInformation>(weatherQueue);
+            MapImage mapImage = new MapImage(weatherInformation);
 
             HttpClient newClient = new HttpClient();
             HttpRequestMessage newRequest = new HttpRequestMessage(HttpMethod.Get, string.Format(URLAmsterdamMap));
@@ -35,11 +27,16 @@ namespace BeerAppServerSide {
 
             /* Read the responseBody and paste to a JObject */
             //var json = response.Content.ReadAsStringAsync();
-            
-            Stream result = await response.Content.ReadAsStreamAsync();
-            MapImage mapImage = new MapImage();
-            mapImage.DrawImage(result);
 
+            Stream result = await response.Content.ReadAsStreamAsync();
+
+            try {
+                mapImage.UploadImageToBlob(result);
+            }catch(Exception e) {
+                log.LogError($"Something went wrong with uploading the image to the blob container");
+                log.LogError(e.ToString());
+                throw new ServiceUnavailableException();
+            }
         }
     }
 }
