@@ -42,7 +42,3 @@ This is my bad, I could have made the API dynamically to ask the user for a coun
 
 ### Would
 - Other useful features you can think of!
-
-Wanneer alle must haves op de juiste manier zijn geïmplementeerd leidt dit tot het cijfer 6.0. Met de could haves en would haves kunnen extra punten verdiend worden. 
-
-De opdracht dient te worden ingeleverd in de vorm van een git repository, bij voorkeur een die publiek toegankelijk is en kan worden gecloned. Indien dit geen optie is, resteert het opsturen van een zipfile. Het inleveren geschiedt door middel van het sturen van een email aan T.Bleijendaal@wearetriple.com met een cc aan erwin.devries@inholland.nl.De deadline voor de 1e kans is 16 oktober om 23:59. De deadline voor de herkansing ligt in periode 2 en zal via moodle nader bekend worden gemaakt.
