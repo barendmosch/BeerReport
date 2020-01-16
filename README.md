@@ -8,6 +8,11 @@ Through the GET call the user downloads the map of Amsterdams through a connecti
 I made the API static (It can only get information of Amsterdam)
 This is my bad, I could have made the API dynamically to ask the user for a country and based on the input, a map would be generated with the necessary information.
 
+API URL: https://beerappserverside.azurewebsites.net
+GET: https://beerappserverside.azurewebsites.net/api/weather/today
+POST: https://beerappserverside.azurewebsites.net/api/weather/today
+
+
 ## Software Requirements
 - Postman / Insomnia / Fiddler
 - Visual Studio 2017 >= 15.7 
